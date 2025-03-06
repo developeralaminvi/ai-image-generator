@@ -1,0 +1,386 @@
+/* Google Font Inter  */
+
+@import url("https://fonts.googleapis.com/css2?family=Inder&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "serif";
+}
+
+:root {
+  --color-primary: #4A3AFF;
+  /* Royal Blue */
+  --color-primary-dark: #3A2BCE;
+  /* Deep Blue */
+  --color-accent: #FF9F1C;
+  /* Premium Gold */
+  --color-card: #F8FAFC;
+  /* Soft White */
+  --color-input: #ECEFF4;
+  /* Light Grayish */
+  --color-text: #1E1E2E;
+  /* Rich Dark Gray */
+  --color-placeholder: #6B7280;
+  /* Neutral Gray */
+  --color-border: #D1D5DB;
+  /* Subtle Gray */
+  --color-gradient: linear-gradient(135deg, #4A3AFF, #6A5ACD);
+  /* Elegant Blue */
+}
+
+
+body.dark-theme {
+  --color-card: #121826;
+  /* Dark Navy */
+  --color-input: #1A2232;
+  /* Deep Grayish Blue */
+  --color-text: #E5E7EB;
+  /* Soft White */
+  --color-placeholder: #A1A7C2;
+  /* Muted Blue */
+  --color-border: #2D3748;
+  /* Steely Gray */
+  background: var(--color-card);
+  background-image: radial-gradient(circle at 15% 50%, rgba(99, 182, 241, 0.15) 0%, transparent 35%),
+    radial-gradient(circle at 85% 30%, rgba(255, 159, 28, 0.15) 0%, transparent 35%),
+    radial-gradient(circle at 50% 88%, rgba(74, 58, 255, 0.1) 0%, transparent 40%);
+}
+
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: var(--color-text);
+  background: linear-gradient(#e9e9ff, #c8c8ff);
+  padding: 15px;
+}
+
+.container {
+  width: 900px;
+  padding: 32px;
+  border-radius: 23px;
+  background: var(--color-card);
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+body.dark-theme .container {
+  border: 1px solid var(--color-border);
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--color-gradient);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .logo-wrapper {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.header .logo-wrapper .logo {
+  height: 55px;
+  width: 56px;
+  display: flex;
+  color: #fff;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+  border-radius: 15px;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-gradient);
+}
+
+.header .logo-wrapper h1 {
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+.header .theme-toggle {
+  height: 43px;
+  width: 43px;
+  border-radius: 50%;
+  font-size: 1.05rem;
+  cursor: pointer;
+  display: flex;
+  color: var(--color-placeholder);
+  align-items: center;
+  justify-content: center;
+  background: var(--color-input);
+  border: 1px solid var(-color-border);
+  transition: all 0.3s ease;
+}
+
+.header .theme-toggle:hover {
+  color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+  margin: 35px 0 5px;
+}
+
+.main-content .prompt-container {
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.prompt-container .prompt-input {
+  width: 100%;
+  resize: vertical;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  min-height: 120px;
+  padding: 16px 20px;
+  border-radius: 15px;
+  color: var(--color-text);
+  background: var(-color-input);
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+}
+
+.prompt-container .prompt-input::placeholder {
+  color: var(--color-placeholder);
+}
+
+.prompt-container .prompt-input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.15);
+  outline: none;
+}
+
+.prompt-container .prompt-btn {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  height: 35px;
+  width: 35px;
+  border: none;
+  color: #fff;
+  font-size: 0.75rem;
+  border-radius: 50%;
+  opacity: 0.8;
+  background: var(--color-gradient);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.prompt-actions .select-wrapper {
+  position: relative;
+}
+
+.prompt-actions .select-wrapper::after {
+  content: "\f078";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-placeholder);
+  padding-left: 7px;
+  background: var(--color-input);
+  pointer-events: none;
+  font-size: 0.9rem;
+}
+
+.prompt-container .prompt-btn:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px 1px rgba(0, 0, 0, 0.1);
+}
+
+.main-content .prompt-actions {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1.2fr 1fr 1.1fr 1fr;
+}
+
+.prompt-actions :where(.custom-select, .generate-btn) {
+  cursor: pointer;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 10px;
+  background: var(--color-input);
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+}
+
+.prompt-actions .custom-select {
+  width: 100%;
+  outline: none;
+  height: 100%;
+  appearance: none;
+  color: var(--color-text);
+}
+
+.prompt-actions .custom-select:is(:focus, :hover) {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.prompt-actions .generate-btn {
+  display: flex;
+  gap: 12px;
+  font-weight: 500;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 25px;
+  border: none;
+  color: #fff;
+  background: var(--color-gradient);
+  margin-left: auto;
+}
+
+.prompt-actions .generate-btn:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.prompt-actions .generate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px Irgba(109, 40, 217, 0.3);
+}
+
+.main-content .gallery-grid:has(.img-card) {
+  margin-top: 30px;
+}
+
+.main-content .gallery-grid {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+.gallery-grid .img-card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+  border-radius: 16px;
+  background: var(--color-input);
+  border: 1px solid var(--color-border);
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.gallery-grid .img-card:not(.loading, .error):hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-grid .img-card .result-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-grid .img-card:is(.loading, .error) :is(.result-img, .img-overlay) {
+  display: none;
+}
+
+.gallery-grid .img-card .img-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.gallery-grid .img-card:hover .img-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.gallery-grid .img-card .img-download-btn {
+  height: 45px;
+  width: 45px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: 5px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.25);
+  transition: all 0.3s ease;
+}
+
+.gallery-grid .img-card .img-download-btn:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.gallery-grid .img-card .status-container {
+  padding: 15px;
+  display: none;
+  grid: 13px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery-grid .img-card:where(.loading, .error) .status-container {
+  display: flex;
+}
+
+.gallery-grid .img-card.loading .status-container i,
+.gallery-grid .img-card.error .spinner {
+  display: none;
+}
+
+.gallery-grid .img-card.error .status-container i {
+  font-size: 1.7rem;
+  color: #ef4444;
+}
+
+.gallery-grid .img-card.loading .spinner {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 3px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.gallery-grid .img-card .status-text {
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--color-placeholder);
+  margin-top: 10px;
+}
